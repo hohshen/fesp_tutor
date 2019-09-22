@@ -15,5 +15,5 @@ services:
     image: node-express:dev
     volumes:
       - ./src:app/src
-    prot:
+    port:
       - 3000:3000
