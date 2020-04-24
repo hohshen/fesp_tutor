@@ -3,17 +3,10 @@ version: '3'
 services:
   mysql:
     image: mysql
-    restart: always
-    ports: 3306:3306
-    expose: 
-      -3306
-
-  app:
-    build:
-      context: ./
-      dockerfile: dev.Dockerfile
-    image: node-express:dev
-    volumes:
-      - ./src:app/src
-    port:
-      - 3000:3000
+    container_name: simple_db
+    ports: 
+      - 9453:3306
+    environment:
+      - MYSQL_DATABASE=test
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=root
