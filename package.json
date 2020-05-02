@@ -1,17 +1,17 @@
 {
-  "name": "pure_express_mysql_docker",
+  "name": "ioctutor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
-    "start:dev":"nodemon src/app.js",
-    "start:dev:docker":"docker-compose -p node_express up --build"
+    "start": "tsc-watch --onSuccess \"node ./dist/day1.js\""
   },
-  "author": "Mike Wang <mikewang@oringnet.com>",
+  "author": "Mike Wang",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
+  "devDependencies": {
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
   }
 }

@@ -1,7 +1,0 @@
-.git
-.gitignore
-LICENSE
-README.md
-dist
-node_modules/*
-package-lock.json
