@@ -10,9 +10,9 @@
 把該解的依賴都解一解,這樣不只是code的乾淨程度提升,
 更是方便撰寫測試.
 
-這邊藉由IOC的介紹,一步一步解依賴,並且符合[solid](https://en.wikipedia.org/wiki/SOLID)原則
+這邊藉由IOC的介紹,一步一步解依賴,並且符合[SOLID](https://en.wikipedia.org/wiki/SOLID)原則.
 
-# User story
+# User Story
 藉由小明的一週,來了解IOC(Inversion of Control)的運作,
 要實做IOC就使用DI(Dependency Injection依賴注入),
 要符合SOLID就要使用DIP(Dependency Inversion Principle依賴倒置),
