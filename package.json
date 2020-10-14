@@ -1,0 +1,18 @@
+{
+  "name": "ioctutor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker": "docker-compose -p micro_service up --build",
+    "stop": "docker-compose -p micro_service down"
+  },
+  "author": "Hohshen Wang",
+  "license": "ISC",
+  "devDependencies": {
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
+  }
+}

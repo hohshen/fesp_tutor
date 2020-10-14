@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:5
+    container_name: mirco-redis
+    ports:
+      - 6379:6379
+    expose:
+      - 6379
+
+  srv-user:
+    build:
+      context: ./src/srv-user
+      dockerfile: Dockerfile
+    image: srv-user
+    container_name: mirco-user
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    volumes:
+      - ./src/srv-user/src:/app/src
+    ports:
+      - 3000 #app
+    expose:
+      - 3000
+
+  apigateway:
+    build:
+      context: ./src/api-gateway
+      dockerfile: Dockerfile
+    image: apigateway
+    container_name: micro-apigateway
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+      - srv-user
+    volumes:
+      - ./src/api-gateway/src:/app/src
+    ports:
+      - 3000:3000 #server
+    expose:
+      - 3000

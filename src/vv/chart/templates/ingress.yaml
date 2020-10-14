@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web
+  namespace: {{ .Values.namespace | quote }}
+spec:
+  rules:
+  - host: app.127.0.0.1.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: app-service
+          servicePort: 3000

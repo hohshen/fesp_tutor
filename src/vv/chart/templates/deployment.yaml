@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: {{ .Values.namespace | quote}}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-deployment
+  template:
+    metadata:
+      labels: 
+        app: app-deployment
+    spec:
+      containers:
+      - name: app-srv-containercl3
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: 3000
